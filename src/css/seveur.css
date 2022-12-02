@@ -1,0 +1,69 @@
+
+
+.table{
+    width: 80%;
+}
+#table-pro{
+    display: none;
+}
+.content1{
+    width: 60%;
+}
+
+.btn-ajouter{
+    margin-bottom: 10px;
+}
+.btn-edit .btn{
+    height: 30px;
+    padding: 0px;
+}
+
+/* les produit a ID=10 > */
+
+.plus10{
+    display: none;
+   
+}
+.plus10.active{
+    display: initial;
+}
+#afichePlus{
+    float: right;
+}
+
+.AjouServeur{
+    
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+
+    border-radius: 8px;
+    width: 400px;
+    border: 1px;
+    height: 455.5px;
+    background-color: #fff;
+    padding: 20px 20px 20px 20px;
+}
+
+.AjouServeur form input{
+    padding: 8px;
+    width: 95%;
+    border-radius: 5px;
+}
+.AjouServeur form label{
+    padding: 8px;
+    font-size: 1.2em;
+}
+.btn-ajout{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.AjouServeur .child{
+    margin-top: 10px;
+}
+.AjouServeur{
+    display: none;
+} 

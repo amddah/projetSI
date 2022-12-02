@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('./composants/head') %>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="contentT">
+    <div class="gticket">
+        <div class="title">
+            <img src="./css/logo.jpg" alt="" srcset="">
+            <p> CAFE EL BORG MOGADOR</p>
+            <p>MARRAKECH </p>
+            <p>tel : 06.11.11.11.11</p>
+            <p>-------------------------------------------------------</p>
+            <h3>Sur place</h3>
+            <h3>Ticket N` : <%=ID%> </h3>
+        </div>
+        <div class="date" id="dateT"><%=date_t%></div>
+        <div class="serveur"> Caissier   : <span id="serveur"><%=nom_serveur%></span> <span class="tel">Tel : </span> 
+            <span class="telS"> 06 96969696</span></div>
+        <p>==================================</p>
+        <p class="prod" > 
+            <table class="tabcom" id="tabcom" border="0px"style="width:100%" >
+                <tr>
+                    <th>Produit</th>
+                    <th>PU</th>
+                    <th>Qte</th>
+                    <th>PT</th>
+                </tr>
+                <tr>
+                    <th colspan="4">--------------------------------------------------------</th>
+                </tr>
+                <% for(i=0;i<content.length;i++){%>
+                <tr>
+                    <th id="nom"><%= content[i].nom_p%></th>
+                    <th id="PU1"><%= content[i].prix_u%></th>
+                    <th id="qte2"><%= content[i].qte%></th>
+                    <th id="PT3"><%= content[i].prix_u * content[i].qte%></th>
+    
+                </tr>
+                <%}%>
+            </table>    
+        </p>
+        <div class="title" id="footer"> <p >-------------------------------------------------------</p>
+        <p class="nbrpro">Nbre de produits  <span id="nbrpro"><%=content.length%></span> </p>
+        
+        <h2>Total                    <span id="dop">:</span> <span id="total" style="margin-left:15px"> 00.00</span> DH</h2></div>
+        <div class="espece"> Especes   <span id="total2"></span></div>
+        <p >--------------------------------------------------------</p>
+         <p align="center">Merci de votre visite </p> 
+         <button type="button" class="btn btn-dark " style="margin-left: 40%;">imprimer</button>
+    </div>
+   
+    </div>
+    </div>
+</body>
+<script>
+    window.onload =()=>{
+        let t=0;
+        ' <% for(i=0;i<content.length;i++){%>'
+            p='<%= content[i].prix_u %>'
+            q='<%=content[i].qte%>'
+            t+=p*q;
+        ' <%}%>'
+        document.getElementById('total').innerHTML=t;
+        document.getElementById('total2').innerHTML=t;
+    }
+    let btn=document.querySelector('.btn');
+    btn.addEventListener('click',()=>{
+        btn.style.display='none';
+        window.print();
+    })
+</script>
+</html>

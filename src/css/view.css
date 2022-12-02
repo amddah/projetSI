@@ -1,0 +1,30 @@
+.contentV{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.tableview{
+    width: 48%;
+   
+}
+  .detial{
+    width: 30%; 
+    /* margin-top: -63px; */
+    margin-left: 5px;
+} 
+#cardID{
+    background-color: #17A2B8;
+}
+
+.titeV{
+    background-color: #17A2B8;
+    border-radius: 5px;
+}
+#nbrP{
+    margin-left: 25px;
+}
+.goback .btn{
+    font-size: 1.2em;
+    font-weight: 500;
+}

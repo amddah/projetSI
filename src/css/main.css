@@ -1,0 +1,166 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+body{
+    background-color: #9c9d9e;
+}
+
+.pbody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+  
+}
+.content.active{
+    display: none;
+}
+.content{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    border: 1px;
+    
+}
+
+.ticket{  
+  
+    width: 280px;
+   margin-top: 45px;
+    height: 80vh;
+    border: 4mm ridge rgba(184, 184, 169, 0.6);
+    overflow: auto;
+}
+.ticket input{
+    padding: 5px; 
+    font-size: 1.2em;
+    margin-top: 5px;
+    width: 75%;
+    font-weight: bold;
+
+}
+.ticket .qtep{
+    padding: 5px;
+    font-size: 1.2em;
+    margin-top: 5px;
+    width: 25%;
+    float: right;
+    margin-right: 0px;
+    font-weight: bold;
+    flex-direction: row;
+
+}
+
+.produit{
+    /* background-color: rgb(84, 84, 88);  */
+   margin: auto;
+   float: left;
+    width: 980px;
+    margin-left: 10px;
+    padding: 10px;
+    height: 80vh;
+     border: 2mm ridge rgba(184, 184, 169, 0.6); 
+   
+}
+.produit button{
+    width: 200px;
+    height: 100px;
+    padding: 15px;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 1.5em;
+}
+
+.categore.active{
+    display: none;
+}
+.categore{
+    /* background-color:#0069D9; */
+    height: 70px;
+    width: auto;
+     display: flex; 
+     margin-top: -75px;
+     margin-left: 300px;
+}
+.categore button{
+    width: 200px;
+    height: 100px;
+    margin-top: 2px;
+    margin-left: 5px;
+    font-size: 1.5em;
+   
+}
+.vide{
+    width: 420px;
+}
+.gticket{
+   position: absolute;
+   left: 50%;
+   top: 0;
+    
+    width:auto;
+    height: auto;
+    
+    background-color: rgb(126, 185, 175);
+     padding: 8px;
+}
+
+.title{
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+   /* margin-top: 5px; */
+   
+}
+
+.title img{
+    width: 100px;
+    height: 100px;  
+}
+#footer{
+    margin-top: 0px;
+}
+.tel{
+    margin-left: 45px;
+}
+#nbrpro{
+    margin-left: 45px;
+}
+
+#dop{
+    margin-left: 65px;
+}
+#total2{
+margin-left: 70%;
+}
+.qte button{
+    width: 100px;
+    height: 50px;
+    
+}
+.qte{
+    position: relative;
+    bottom: 0px;
+}
+.enbtn{
+    display: flex;
+}
+
+#erreur{
+    position: absolute;
+    top: 5px;
+    background: linear-gradient(135deg,rgb(212, 205, 205),rgba(235, 6, 59, 0.404));
+    
+   height: 55px;
+}
+
+
+
