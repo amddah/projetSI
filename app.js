@@ -11,11 +11,6 @@ const App = express();
 
 // option de connection a mysql
 const optionDB = {
-    host : "localhost",
-    user : "root",
-    password : "",
-    database : "gestion_cafe"
-}|| {
   host : process.env.DB_HOST,
   user : process.env.DB_USERNAME,
   password : process.env.DB_PASSWORD,
