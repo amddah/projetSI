@@ -33,17 +33,17 @@ integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbs
 
     <div class="pbody">  
     <%- include ('./composants/menu') %>
-   
         <div class="err" id="erreur"></div>
     <div class="Produit" id="table-pro"> <%- include ('./composants/Produit') %></div>
    <div class="content">
         
     <form action="/Formcontenu" method="post"  >
+        <div class="selest"><label for="serveur">Serveur </label>
     <select name="nom_serveur" id="nom_serveur">
         <% for(i=0;i<serveur.length;i++){%>
         <option value="<%=serveur[i].nomSer%>"><%=serveur[i].nomSer%></option>
         <%}%>
-    </select>
+    </select></div>
     <div class="ticket" id="ticket">
         
             
@@ -51,7 +51,7 @@ integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbs
     </div>
        <input type="hidden" name="printN" id="print" >
          <input type="submit" class="btn btn-success" value="confirmer" id="confirme" onclick="disable(this.value)"> 
-         <button type="submit" name="print" value="1" id="confirme" onclick="disable(this.value)" class="btn btn-secondary">imprime </button>
+         <button type="reset" name="print" value="1" id="confirme" onclick="disable(this.value)" class="btn btn-secondary">annuler </button>
        <button type="button"  value="modifier" id="confirme" onclick="disable('0')" class="btn btn-primary">modifier</button>
         </form>
        
@@ -101,7 +101,7 @@ integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbs
                 <th>ID</th>
                 <th>Nom Serveur</th>
                 <th>Date</th>
-                <th>type</th>
+               <!--- <th>type</th>-->
                 <th></th>
                </tr>
                <% for(i=R_comm.length-1;i>R_comm.length-11;i--){ %>
@@ -109,13 +109,14 @@ integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbs
                 <tr>
                     <td><%= R_comm[i].ref_comm %></td>
                     <td><%= R_comm[i].nomSer %></td>
-                    <td><%= R_comm[i].date_comm.getFullYear()%>-<%= R_comm[i].date_comm.getMonth()%>-<%= R_comm[i].date_comm.getDate()%> 
+                    <td><%= R_comm[i].date_comm.getFullYear()%>-<%= R_comm[i].date_comm.getMonth()+1%>-<%= R_comm[i].date_comm.getDate()%> 
                         <%= R_comm[i].date_comm.getHours()%>:<%= R_comm[i].date_comm.getMinutes()%>:<%= R_comm[i].date_comm.getSeconds()%>
                     </td>
-                    <td>sur place</td>
+                    <!--<td>sur place</td>-->
                     <td>
                         <form action="/view" method="post">
                         <input type="hidden" name="id_comm" id="id_comm" value="<%= R_comm[i].ref_comm %>">
+                        <input type="hidden" name="nom_serveur" id="nom_serveur" value="<%= R_comm[i].nomSer %>">
                         <button type="submit" class="btn btn-info">view</button>
                         </form>
                     </td>

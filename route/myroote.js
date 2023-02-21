@@ -52,9 +52,7 @@ route.post('/Formcontenu',(req,res)=>{
     let date_t = annee+'-'+mois+'-'+jour+' '+h+':'+min+':'+sc; 
     let nom_serveur=req.body.nom_serveur;
   //
-    
-            let aa="req.body.id"+0;
-            console.log(aa);
+   
     let Obj=[
         {
         nom:req.body.id0,
@@ -110,9 +108,9 @@ route.post('/Formcontenu',(req,res)=>{
                  if (erreur) {
                     console.log(erreur);
                     res.status(500).render("erreur",{erreur});
-                }else if (btn!='1') {
+                }/*else  {
                     res.status(300).redirect('/');
-                }
+                }*/
             })
          //select la ID de la dernier commande ajouter
           let maxid = "SELECT MAX(ref_comm) AS ID FROM commande"
@@ -132,29 +130,26 @@ route.post('/Formcontenu',(req,res)=>{
                    
                     console.log(erreur);
                     res.status(500).render("erreur",{erreur});
-                }else{
-                    //ajout a ticket les produit commande sur place
-                    let reqSQL="SELECT concerne_pro.ref_comm,concerne_pro.qte,produit.nom_p,produit.prix_u FROM  concerne_pro INNER JOIN produit ON concerne_pro.id=produit.id AND concerne_pro.ref_comm ="+result[0].ID;
-                    let btn=req.body.printN;
-                    let ID=result[0].ID;
-                    if (btn==='1'){ 
-                        connection.query(reqSQL,[],(erreur,content)=>{
-                        if (erreur) {
-                            res.status(500).render("erreur",{erreur});
-                        } else {
-                             res.status(300).render('ticket',{content,ID,date_t,nom_serveur});
-                             //render a la page ticket les produit est la date ...
-                             
-                        }
-                    })}/*else {
-                        res.status(300).redirect('/');
-                    }*/
-                   
                 }
                })
 
             }//else break; //if
         }//for
+        //ajout a ticket les produit commande sur place
+        let reqSQL="SELECT concerne_pro.ref_comm,concerne_pro.qte,produit.nom_p,produit.prix_u FROM  concerne_pro INNER JOIN produit ON concerne_pro.id=produit.id AND concerne_pro.ref_comm ="+result[0].ID;
+        let btn=req.body.printN;
+        let ID=result[0].ID;
+       // if (btn==='1'){ 
+            connection.query(reqSQL,[],(erreur,content)=>{
+            if (erreur) {
+                res.status(500).render("erreur",{erreur});
+            } else {
+                res.render('ticket',{content,ID,date_t,nom_serveur});
+                 //render a la page ticket les produit est la date ...
+                
+            }
+        })
+//here 
        })
 
         }

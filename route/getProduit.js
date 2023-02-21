@@ -55,7 +55,7 @@ Produit.delete('/AjouPro/:id',(req,res)=>{
                 if (erreur) {
                     res.status(404).render('erreur',{erreur});
                 } else {
-                    res.status(300).json({routeRacine : "/"});
+                    res.status(200).json({routeRacine : "/"});
                 }
             });
         }

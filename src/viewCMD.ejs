@@ -5,7 +5,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+  <%- include ('./composants/menu') %>
   <div class="contentV">
     
   <div class="tableview">
@@ -68,13 +68,24 @@
               </div>
             <div class="col-sm-6 mb-4">
               <div class="card">
-                <div class="card-body">
+                <div class="card-body bg-danger">
                   <h4 class="card-title">Tolal</h4>
                   <p class="card-text"> <span id="total"></span> DH</p>
     
                 </div>
               </div>
             </div>
+            <div class="col-sm-6 mb-4">
+              <div class="card ">
+                <div class="card-body bg-info">
+                  <h4 class="card-title">Serveur </h4>
+                  <p class="card-text"> <%=nom %></p>
+                  
+    
+                </div>
+              </div>
+            </div>
+
           </div>
           <div class="vide" style="height: 63px;">
 
@@ -111,4 +122,5 @@
     }
    
 </script>
+<script src="./dynamique/menu.js"></script>
 </html>

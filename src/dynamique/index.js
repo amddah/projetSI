@@ -6,10 +6,9 @@ let erreur=document.getElementById('erreur');
     function creeticket(nom_p,prix,id_p){
         if (!clicked(nom_p) && Nvide()) {
             if (j)
-                if (tick[j-2].nom!="" && tick[j-1].Qt=="" ) {
+                if (tick[j-1].nom!="" && tick[j-1].Qt=="" ) {
                     ajoutQte(1);
                     }
-             
         oInput = document.createElement('input'); //on crée l'élément (la balise) input
         oInput.id ='nom_p'; //on définit l'attribut id du input
        oInput.setAttribute('class','cla'+id_p);
@@ -19,6 +18,7 @@ let erreur=document.getElementById('erreur');
         erreur.style.display='none'      
         }else{
             erreur.style.display='initial'
+           
             erreur.innerHTML="<b> le produit est deja exist modifier sa quantite </b>"
         }
         
@@ -40,7 +40,7 @@ let erreur=document.getElementById('erreur');
                     
                     oForm.appendChild(hidden);
                     hidden.value=id_p;
-            }  
+            }
         } 
        
     }
@@ -78,6 +78,7 @@ let erreur=document.getElementById('erreur');
         }
     }
     }
+
     //cree object {nom:"",Qt:""}
     function select(nom_p,qte){
         tick[j]=Object.create({},{nom:{value:nom_p},Qt:{value:qte}})
@@ -86,10 +87,8 @@ let erreur=document.getElementById('erreur');
 
    function disable(val){
     const pro = document.querySelectorAll('#nom_p');
-    
-        
-    
-    for (let i = 0; i < pro.length; i++) {
+        ajoutQte(1);
+        for (let i = 0; i < pro.length; i++) {
         const element = pro[i];
         element.disabled=false;
         
@@ -112,15 +111,5 @@ let erreur=document.getElementById('erreur');
     return true;
    }
 
-
-   //cmdview methode delete
-
-   function views(id){
-    let pointfinal ="view/"+id;
-    fetch(pointfinal,{method:"POST"}).then((res)=>{
-        res.json()
-    }).then((done)=>window.location.href=done.routeRacine
-    ).catch((err)=>console.log(err))
-}
 
 

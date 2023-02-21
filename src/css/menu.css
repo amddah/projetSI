@@ -3,7 +3,7 @@
     width: 280px;
     height: 100vh;
     background-color:#343A40;
-    box-shadow: 10px 5px 5px #FFF;
+    /* box-shadow: 10px 5px 5px #FFF; */
     position: fixed;
     transition: all 500ms ; 
     color: #FFF;
@@ -53,7 +53,7 @@
                         border: 1px solid;
                         border-top-right-radius: 200px;
                         border-bottom-right-radius: 200px;
-                        box-shadow: 1px 1px rgb(224, 219, 219), -1em 0 .9em rgb(236, 236, 224);
+                        /* box-shadow: 1px 1px rgb(224, 219, 219), -1em 0 .9em rgb(236, 236, 224); */
                         padding: 10px;
                         cursor: pointer;
                         margin-left: 3px;
@@ -82,7 +82,8 @@
                     }
                     .slide .item:hover{
                         cursor: pointer;
-                        background-color: blue;
+                        background-color: #fff;
+                        color: #000;
                     }
                      .slide  a{
                     
@@ -92,7 +93,7 @@
                      }
                      .slide  a:hover{
                        
-                        color: #FFF;
+                        color: #000;
                         font-size: 1.2em;
                         text-decoration: none;
                      }

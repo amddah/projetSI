@@ -22,5 +22,6 @@ produit.addEventListener('click',()=>{
     content.classList.toggle("active");
     categore.classList.toggle('active');
     pageProduit.classList.toggle('active');
+   document.querySelector('.ordre').classList.toggle('active');
 })
 

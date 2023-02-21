@@ -15,6 +15,7 @@ body{
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    margin-top: 15px;
   
 }
 .content.active{
@@ -101,17 +102,31 @@ body{
     width: 420px;
 }
 .gticket{
-   position: absolute;
-   left: 50%;
-   top: 0;
-    
-    width:auto;
+   
+   margin: auto;
+    width:380px;
     height: auto;
     
     background-color: rgb(126, 185, 175);
      padding: 8px;
 }
-
+/*style select nom serveur*/
+.selest{
+    margin-top:15px ;
+    position: absolute;
+    display: flex;
+    margin-bottom: -5px;
+    width: 280px;
+    font-size: 1.2em;
+  
+}
+.selest select {
+    margin-left: 15px;
+    width: 100%;
+   border-radius: 5px;
+    font-size: 1.2em;
+   font-weight: 400;
+}
 .title{
    display: flex;
    justify-content: center;
@@ -163,4 +178,14 @@ margin-left: 70%;
 }
 
 
+.navb{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    box-shadow: 1px 4px rgb(255, 255, 255), 0em 0 .0em rgb(255, 255, 255);
+}
 
+.navb .navbar{
+    box-shadow: 1px 4px rgb(130, 129, 129), 0em 0 .1em rgb(255, 255, 255);
+
+}

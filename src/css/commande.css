@@ -16,7 +16,9 @@
     color: #FFF;
    background-color: #218838;
 }
-
+.ordre.active{
+    display: none;
+}
 .ordre-content{
    
     margin-top: 15px;
