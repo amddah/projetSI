@@ -15,7 +15,7 @@ const optionDB = {
     user : "root",
     password : "",
     database : "gestion_cafe"
-}
+}|| process.env;
 
 App.use(express.urlencoded({extended : false}));
 
